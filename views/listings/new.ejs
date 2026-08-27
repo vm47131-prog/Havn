@@ -1,0 +1,148 @@
+<% layout("/layouts/boilerplate")
+  %>
+  <link rel="stylesheet" href="/css/enhance_desc.css">
+  <div class="row mb-2">
+    <div class="col-8 offset-2">
+      <h3>Create a new Listing</h3>
+      <br>
+      <form method="post"
+        action="/listings/new"
+        novalidate
+        class="needs-validation"
+        enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="title"
+            class="form-label">Title</label>
+          <input type="text"
+            placeholder="Enter title"
+            name="title"
+            class="form-control"
+            required>
+          <div class="invalid-feedback">
+            Please Provide Title
+          </div>
+          <div class="valid-feedback">
+            Looking good!
+          </div>
+        </div>
+
+    <div class="mb-3">
+    <label
+        for="description"
+        class="form-label"
+    >
+        Description
+    </label>
+    <textarea
+        name="description"
+        id="description"
+        placeholder="Tell guests about your place..."
+        class="form-control description-box"
+        rows="2"
+        required
+    ></textarea>
+    <!-- AI ENHANCE BUTTON -->
+    <div class="ai-description-controls">
+        <button
+            type="button"
+            id="enhanceDescription"
+            class="ai-enhance-btn"
+        >
+            <span id="aiButtonIcon">✨</span>
+            <span id="aiButtonText">
+                Enhance with AI
+            </span>
+        </button>
+        <span
+            id="aiLoading"
+            class="ai-loading"
+        >
+            Improving description...
+        </span>
+    </div>
+    <div class="invalid-feedback">
+        Description must be at least 10 characters
+    </div>
+    <div class="valid-feedback">
+        Description accepted!
+    </div>
+    </div>
+        <div class="mb-3">
+          <label for="category" class="form-label">Property Type</label>
+          <select class="form-select" name="category" id="category" required>
+            <option value="Trending">Trending</option>
+            <option value="Rooms">Rooms</option>
+            <option value="Iconic-Cities">Iconic Cities</option>
+            <option value="Mountains">Mountains</option>
+            <option value="Castles">Castles</option>
+            <option value="Amazing-Pools">Amazing pools</option>
+            <option value="Farms">Farms</option>
+            <option value="Arctic">Arctic</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="image"
+            class="from-label">Upload Image</label>
+          <input type="file"
+            name="image"
+            class="form-control"
+            required />
+            <p> *<i>png</i>,<i>jpg</i>,<i>jpeg</i>*</p> 
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-5">
+            <label for="price"
+              class="from-label">Price</label>
+            <input type="number"
+              value="1200"
+              name="price"
+              class="form-control"
+              required>
+            <div class="valid-feedback">
+              Price accepted!
+            </div>
+          </div>
+          <div class="mb-3 col-md-7">
+            <label for="country"
+              class="from-label">Country</label>
+            <input type="text"
+              value="India"
+              name=country
+              class="form-control">
+            <div class="valid-feedback">
+              Country verified!
+            </div>
+          </div>
+        </div>
+      <div class="mb-3">
+
+          <label class="form-label">Location</label>
+
+          <maptiler-geocoder
+              id="locationGeocoder"
+              apiKey="<%= process.env.MAP_TOKEN %>"
+              placeholder="Enter the location">
+          </maptiler-geocoder>
+
+          <input
+              type="hidden"
+              name="location"
+              id="location">
+
+      </div>
+            <button
+                class="btn btn-dark"
+                style="width: auto !important; padding: 8px 24px !important;">
+                Add
+            </button>
+            </div>
+        </div>
+
+        <br>
+      </form>
+    </form>
+<script src="/js/map_recom.js"></script>
+<script src="/js/enhance_desc.js"></script>
+    </div>
+  </div>
+  

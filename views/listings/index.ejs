@@ -1,0 +1,145 @@
+<% layout("/layouts/boilerplate") %>
+  <link rel="stylesheet" href="/css/filter.css">
+   <div class="filter-bar mt-3">
+
+  <!-- ================= CAROUSEL ================= -->
+  <div
+    id="filterCarousel"
+    class="carousel slide filter-carousel"
+    data-bs-ride="false"
+    data-bs-interval="false"
+  >
+
+    <div class="carousel-inner">
+
+      <!-- SLIDE 1 -->
+      <div class="carousel-item active">
+        <div class="filter-items">
+
+          <div class="filter" data-category="Trending">
+            <i class="fa-solid fa-fire"></i>
+            <p>Trending</p>
+          </div> 
+
+          <div class="filter" data-category="Rooms">
+            <i class="fa-solid fa-bed"></i>
+            <p>Rooms</p>
+          </div>
+
+          <div class="filter" data-category="Iconic-Cities">
+            <i class="fa-solid fa-mountain-city"></i>
+            <p>Iconic Cities</p>
+          </div>
+
+          <div class="filter" data-category="Mountains">
+            <i class="fa-solid fa-mountain-sun"></i>
+            <p>Mountains</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- SLIDE 2 -->
+      <div class="carousel-item">
+        <div class="filter-items">
+
+          <div class="filter" data-category="Castles">
+            <i class="fa-brands fa-fort-awesome"></i>
+            <p>Castles</p>
+          </div>
+          <div class="filter" data-category="Amazing-Pools">
+            <i class="fa-solid fa-water-ladder"></i>
+            <p>Amazing Pools</p>
+          </div>
+
+          <div class="filter" data-category="Camping">
+            <i class="fa-solid fa-tents"></i>
+            <p>Camping</p>
+          </div>
+
+          <div class="filter" data-category="Farms">
+            <i class="fa-solid fa-cow"></i>
+            <p>Farms</p>
+          </div>
+
+          <div class="filter" data-category="Arctic">
+            <i class="fa-solid fa-igloo"></i>
+            <p>Arctic</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- LEFT BUTTON -->
+    <button
+      class="carousel-control-prev custom-carousel-btn"
+      type="button"
+      data-bs-target="#filterCarousel"
+      data-bs-slide="prev"
+    >
+      <i class="fa-solid fa-chevron-left text-dark"></i>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+
+    <!-- RIGHT BUTTON -->
+    <button
+      class="carousel-control-next custom-carousel-btn"
+      type="button"
+      data-bs-target="#filterCarousel"
+      data-bs-slide="next"
+    >
+      <i class="fa-solid fa-chevron-right text-dark"></i>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+  </div>
+
+
+  <!-- ================= TAX TOGGLE ================= -->
+  <div class="tax-toggle-box">
+
+    <div class="form-check form-switch tax-switch">
+
+      <input
+        class="form-check-input style-pointer"
+        type="checkbox"
+        role="switch"
+        id="switchCheckDefault"
+      >
+
+      <label
+        class="form-check-label style-pointer"
+        for="switchCheckDefault"
+      >
+        Display total after taxes
+      </label>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="row row-cols-lg-4  row-cols-xl-5 row-cols-md-3 row-cols-sm-2 listing-body-card">
+   <%for(let listing of allListings){%>
+  <a href="/listings/<%=listing._id%>" class="listing-link">
+  <div class="card listing-card">
+   <img src="<%=listing.image.url%>" class="card-img-top listing-img" alt="Nice place" >
+   <div class="card-img-overlay"><i class="fa-regular fa-heart position-absolute top-0 end-0 m-3 card-heart"></i></div> <!--image overlays -->
+   <div class="card-body">
+    <p class="card-text"><b><%=listing.title%></b><br/>
+      &#8377;
+      <%=listing.price.toLocaleString("en-IN")%>/night
+      <i class="tax-info">&nbsp;&nbsp;+18% GST</i>
+    </p>
+  </div>
+  </div>
+    </a>
+  <%}%>
+  </div>
+  <script src="/js/index.js"></script> 

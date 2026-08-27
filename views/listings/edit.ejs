@@ -1,0 +1,104 @@
+<% layout("/layouts/boilerplate")
+    %>
+<link rel="stylesheet" href="/css/enhance_desc.css">
+    <body>
+        <div class="row mt-3">
+            <div class="col-8 offset-2">
+                <h3> Edit Your Listing</h3>
+                <form method="post"
+                    action="/listings/<%=listing._id%>?_method=PUT"
+                    class="needs-validation"
+                    novalidate
+                    enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title"
+                            class="form-label">Title</label>
+                        <input type="text"
+                            value="<%=listing.title%>"
+                            name="title"
+                            class="form-control"
+                            required>
+                    </div>
+            <div class="mb-3">
+                <label
+                    for="description"
+                    class="form-label"
+                >
+                    Description
+                </label>
+                <textarea
+                    name="description"
+                    id="description"
+                    placeholder="Tell guests about your place..."
+                    class="form-control description-box"
+                    rows="5"
+                    required
+                ><%=listing.description%></textarea>
+                <!-- AI ENHANCE BUTTON -->
+                <div class="ai-description-controls">
+                    <button
+                        type="button"
+                        id="enhanceDescription"
+                        class="ai-enhance-btn"
+                    >
+                        <span id="aiButtonIcon">✨</span>
+                        <span id="aiButtonText">
+                            Enhance with AI
+                        </span>
+                    </button>
+                    <span
+                        id="aiLoading"
+                        class="ai-loading"
+                    >
+                        Improving description...
+                    </span>
+                </div>
+                    <div class="mb-3">
+                        Original Image <br>
+                        <img src="<%=originalImageUrl %>"   
+                            class="img-fluid w-50"
+                            alt="listing image">
+                    </div>
+                    <div class="mb-3">
+                        <label for="image"
+                            class="form-label">Upload New Image</label>
+                        <input type="file"
+                            name="image"
+                            class="form-control">
+                        <p> *<i>png</i>,<i>jpg</i>,<i>jpeg</i>*</p>    
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-md-5">
+                            <label for="price"
+                                class="form-label">Price</label>
+                            <input type="number"
+                                value="<%=listing.price%>"
+                                name="price"
+                                class="form-control"
+                                required>
+                        </div>
+                        <div class="mb-3 col-md-7">
+                            <label for="country"
+                                class="form-label">Country</label>
+                            <input type="text"
+                                value="<%=listing.country%>"
+                                name="country"
+                                class="form-control"
+                                required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="location"
+                            class="form-label">Location</label>
+                        <input type="text"
+                            value="<%=listing.location%>"
+                            name="location"
+                            class="form-control"
+                            required>
+                    </div>
+                    <button class="btn btn-dark mb-3 edit-btn">Edit</button>
+                </form>
+                <script src="/js/enhance_desc.js"></script>
+            </div>
+        </div>
+    </body>

@@ -1,0 +1,389 @@
+.listing-body-card {
+  margin-left: -1rem;
+}
+/* =====================================================
+   MAIN FILTER BAR
+===================================================== */
+
+.filter-bar {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 8px 15px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   CAROUSEL
+===================================================== */
+
+.filter-carousel {
+  flex: 1;
+
+  min-width: 0;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   FILTER ITEMS
+===================================================== */
+
+.filter-items {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 48px;
+
+  width: 100%;
+
+  padding: 4px 50px;
+
+  box-sizing: border-box;
+}
+
+/* Individual filter */
+
+.filter {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  min-width: 70px;
+
+  flex-shrink: 0;
+
+  cursor: pointer;
+
+  color: #222;
+
+  transition: 0.2s;
+}
+
+.filter i {
+  font-size: 20px;
+
+  margin-bottom: 5px;
+}
+
+.filter p {
+  margin: 0;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+/* Hover */
+
+.filter:hover {
+  color: #ff385c;
+
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   CAROUSEL BUTTONS
+===================================================== */
+
+.custom-carousel-btn {
+  width: 36px !important;
+  height: 36px !important;
+
+  top: 50% !important;
+
+  transform: translateY(-50%);
+
+  opacity: 1 !important;
+
+  background: white;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+
+  z-index: 5;
+}
+
+.custom-carousel-btn i {
+  font-size: 13px;
+}
+
+.carousel-control-prev.custom-carousel-btn {
+  left: 5px !important;
+}
+
+.carousel-control-next.custom-carousel-btn {
+  right: 5px !important;
+}
+
+.custom-carousel-btn:hover {
+  border-color: #222;
+
+  background: #fff;
+}
+
+/* =====================================================
+   TAX BOX
+===================================================== */
+
+.tax-toggle-box {
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 10px 14px;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 12px;
+
+  background: white;
+
+  box-sizing: border-box;
+}
+
+/* Switch */
+
+.tax-switch {
+  margin: 0 !important;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+/* Label */
+
+.tax-switch .form-check-label {
+  white-space: nowrap;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  color: #222;
+
+  cursor: pointer;
+}
+
+/* Pointer */
+
+.style-pointer {
+  cursor: pointer;
+}
+
+/* =====================================================
+   AIRBNB STYLE SWITCH
+===================================================== */
+
+.tax-switch .form-check-input {
+  width: 36px;
+
+  height: 20px;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+.tax-switch .form-check-input:checked {
+  background-color: #ff385c;
+
+  border-color: #ff385c;
+}
+
+/* =====================================================
+   DESKTOP
+   >= 1200px
+===================================================== */
+
+@media (min-width: 1200px) {
+  .filter-items {
+    gap: 55px;
+  }
+}
+
+/* =====================================================
+   MEDIUM
+   768px - 1199px
+
+   Carousel + Tax box SAME LINE
+===================================================== */
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .filter-bar {
+    gap: 10px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .filter-items {
+    gap: 30px;
+
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .filter {
+    min-width: 60px;
+  }
+
+  .filter i {
+    font-size: 18px;
+  }
+
+  .filter p {
+    font-size: 11px;
+  }
+
+  .tax-toggle-box {
+    padding: 8px 10px;
+  }
+
+  .tax-switch .form-check-label {
+    font-size: 11px;
+  }
+
+  .tax-switch .form-check-input {
+    width: 32px;
+
+    height: 18px;
+  }
+}
+
+/* =====================================================
+   SMALL
+   < 768px
+
+   Tax box moves BELOW
+===================================================== */
+
+@media (max-width: 767px) {
+  .filter-bar {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 8px;
+
+    padding: 8px 10px;
+
+    overflow: visible;
+  }
+
+  /* Carousel full width */
+
+  .filter-carousel {
+    width: 100%;
+
+    flex: none;
+  }
+
+  .filter-items {
+    gap: 30px;
+
+    padding-left: 42px;
+    padding-right: 42px;
+
+    overflow: hidden;
+  }
+
+  .filter {
+    min-width: 55px;
+  }
+
+  .filter i {
+    font-size: 17px;
+  }
+
+  .filter p {
+    font-size: 10px;
+  }
+
+  /* Tax box below carousel */
+
+  .tax-toggle-box {
+    width: 100%;
+
+    justify-content: center;
+
+    padding: 8px;
+
+    border-radius: 10px;
+  }
+
+  .tax-switch {
+    justify-content: center;
+  }
+
+  .tax-switch .form-check-label {
+    font-size: 12px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL
+   < 450px
+===================================================== */
+
+@media (max-width: 450px) {
+  .filter-items {
+    gap: 22px;
+
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+
+  .filter {
+    min-width: 48px;
+  }
+
+  .filter i {
+    font-size: 16px;
+  }
+
+  .filter p {
+    font-size: 9px;
+  }
+
+  .custom-carousel-btn {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .custom-carousel-btn i {
+    font-size: 11px;
+  }
+}

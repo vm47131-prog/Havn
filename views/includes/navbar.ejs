@@ -1,0 +1,163 @@
+<nav class="navbar sticky-top airbnb-navbar">
+  <div class="container-fluid px-3 px-lg-4">
+
+    <!-- ================= LEFT ================= -->
+    <div class="airbnb-left">
+
+      <!-- Logo -->
+      <a href="/listings" class="airbnb-logo">
+        <i class="fa-regular fa-compass"></i>
+      </a>
+
+      <!-- Explore -->
+      <a href="/listings" class="airbnb-explore">
+        <i class="fa-solid fa-earth-americas"></i>
+        <span>Explore</span>
+      </a>
+
+    </div>
+    <!-- ================= CENTER SEARCH ================= -->
+    <div class="airbnb-search-wrapper">
+
+      <form class="airbnb-search-form" action="/listings/search" method="get" >
+
+        <input
+          type="search"
+          class="airbnb-search-input"
+          name="country"
+          placeholder="Search country"
+          aria-label="Search destinations"
+        >
+
+        <button class="airbnb-search-btn">
+          Search
+        </button>
+
+      </form>
+
+    </div>
+
+
+    <!-- ================= RIGHT ================= -->
+    <div class="airbnb-right">
+
+      <!-- Become Host -->
+      <a
+        href="/listings/new"
+        class="airbnb-host"
+      >
+        Become a host
+      </a>
+
+
+      <!-- Login -->
+      <% if(!currUser){ %>
+
+        <a
+          href="/login"
+          class="airbnb-login"
+        >
+          Login
+        </a>
+
+        <!-- Sign Up -->
+        <a
+          href="/signUp"
+          class="airbnb-signup"
+        >
+          Sign up
+        </a>
+
+      <% } %>
+
+
+      <!-- Logout -->
+      <% if(currUser){ %>
+
+        <a
+          href="/logout"
+          class="airbnb-login"
+        >
+          Logout
+        </a>
+
+      <% } %>
+
+
+      <!-- Hamburger -->
+      <button
+        class="airbnb-menu-btn"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#airbnbMenu"
+        aria-controls="airbnbMenu"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- ================================================= -->
+<!-- OFFCANVAS MENU -->
+<!-- ================================================= -->
+
+<div
+  class="offcanvas offcanvas-end airbnb-offcanvas"
+  tabindex="-1"
+  id="airbnbMenu"
+>
+
+  <div class="offcanvas-header">
+
+    <h5 class="offcanvas-title">
+      Menu
+    </h5>
+
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+    ></button>
+
+  </div>
+
+
+  <div class="offcanvas-body">
+
+    <a href="/listings" class="airbnb-menu-link">
+      <i class="fa-solid fa-earth-americas"></i>
+      Explore
+    </a>
+
+    <a href="/listings/new" class="airbnb-menu-link">
+      Become a host
+    </a>
+
+    <% if(!currUser){ %>
+
+      <a href="/login" class="airbnb-menu-link">
+        Login
+      </a>
+
+      <a href="/signUp" class="airbnb-menu-link">
+        Sign up
+      </a>
+
+    <% } %>
+
+    <% if(currUser){ %>
+
+      <a href="/logout" class="airbnb-menu-link">
+        Logout
+      </a>
+
+    <% } %>
+
+  </div>
+
+</div>
+</nav>
