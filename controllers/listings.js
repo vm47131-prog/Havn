@@ -84,7 +84,6 @@ module.exports.updateListing = async (req, res) => {
   let samplelisting = {
     title: title,
     description: description,
-    catogry: catogry,
     // image: {
     //   filename: filename,
     //   url: url,
