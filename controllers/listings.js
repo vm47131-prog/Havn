@@ -80,7 +80,7 @@ module.exports.updateListing = async (req, res) => {
     throw new ExpressError(400, "Send valid data for listing");
   }
   let { id } = req.params;
-  let { title, description, category, price, location, country } = req.body;
+  let { title, description, price, location, country } = req.body;
   let samplelisting = {
     title: title,
     description: description,

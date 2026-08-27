@@ -5,7 +5,7 @@ const joi = require("joi");
     //   listing:joi.object({// not requred as form input is not in form of object , if object then we use
     title: joi.string().required(),
     description: joi.string().required(),
-    category: joi.string().required(),
+    category: joi.string(),
     image: joi.string().allow("", null), //alowing empty and null values
     price: joi.number().required().min(0),
     location: joi.string().required(),
