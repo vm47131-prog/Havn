@@ -570,3 +570,6 @@ body {
   height: 40vh;
   width: 80vw;
 }
+.tax-info {
+  display: none;
+}
