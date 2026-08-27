@@ -89,6 +89,7 @@ app.use((req, res, next) => {
 //   let registeredUser=await User.register(fakeUser,"helloworld");//
 //    res.send(registeredUser);
 // }); //register method automatically check kar lega vo username unique hai ya nahi
+
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter); ///listings/:id/reviews => parent route
 app.use("/", userRouter);
@@ -119,6 +120,9 @@ app.get("/listingsmap/:id/", async (req, res) => {
     console.error(err);
     res.status(500).send("Internal Server Error processing location metrics.");
   }
+});
+app.use("/", async (req, res) => {
+  res.render("listings/home.ejs");
 });
 // Error handling
 app.all("{*path}", (req, res, next) => {
