@@ -558,7 +558,10 @@ body {
 }
 /* Show Page */
 .show-img {
-  height: 30vh;
+  height: 40vh;
+  width: 100% !important;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .delete-btn {
@@ -572,4 +575,9 @@ body {
 }
 .tax-info {
   display: none;
+}
+@media (max-width: 768px) {
+  .show-img {
+    height: 30vh;
+  }
 }

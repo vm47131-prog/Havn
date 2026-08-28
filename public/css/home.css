@@ -45,3 +45,9 @@
   color: white;
   transform: translateY(-2px);
 }
+.havn-greet {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  margin: 24px 0 10px;
+  color: #ff385c;
+  font-weight: 600;
+}
