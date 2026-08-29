@@ -1,19 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+    <body>
+        <div class="havn-hero">
 
-<link rel="stylesheet" href="/css/home.css">
-<div class="havn-hero">
+        <div class="havn-content">
 
-    <div class="havn-content">
+            <h1 class="havn-logo">HΛVN</h1>
+            <p class="havn-greet"></p>
+            <p class="havn-tagline">
+                Find a place that feels like home.
+            </p>
 
-        <h1 class="havn-logo">HΛVN</h1>
-        <p class="havn-greet"></p>
-        <p class="havn-tagline">
-            Find a place that feels like home.
-        </p>
+            <a href="/listings" class="havn-explore-btn">
+                Explore
+            </a>
 
-        <a href="/listings" class="havn-explore-btn">
-            Explore
-        </a>
+        </div>
 
     </div>
 
-</div>
+<script>
+  setTimeout(function(){
+    window.location.href = "/listings";
+  }, 2000); // 2000 milliseconds ka matlab 2 seconds hai
+</script>
+
+</body>
+</html>
